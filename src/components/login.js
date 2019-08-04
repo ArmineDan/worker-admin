@@ -5,7 +5,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { orange } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import {fire} from '../fire';
+import {fire} from '../firebase/firebase';
 import  '../styles/login-register.css';
 
 

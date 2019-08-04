@@ -14,7 +14,7 @@ class  App extends React.Component {
             sign: false
 
         }
-
+    }
 
         signIn = (e) => {
             this.setState({
@@ -22,8 +22,7 @@ class  App extends React.Component {
             })
         }
 
-        render()
-        {
+        render(){
             return (
                 <div className={App}>
                     {!this.state.sign ? <Login signIn={this.signIn}/> : <>
@@ -31,11 +30,11 @@ class  App extends React.Component {
                         <ResponsiveDrawer/>
                     </>}
                 </div>
-            );
+            )
 
         }
-        ;
-    };
+
+
 
 }
 
