@@ -1,14 +1,37 @@
 import React from 'react';
 import './styles/App.css';
+import Login from './components/login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome Admin Team</h1>
-      </header>
-    </div>
-  );
+
+
+class  App extends React.Component{
+constructor(props){
+  super(props)
+  this.state ={
+        sign: false
+
+   }
 }
+
+
+  SignIn = (e) => {
+    this.setState({
+      sign: e
+    } )
+  }
+
+  render(){
+    return(
+        <div className={App}>
+          {!this.state.sign ? <Login signIn={this.SignIn} />: <h1> hello</h1> }
+          </div>
+            );
+
+          };
+          };
+
+
+
+
 
 export default App;
