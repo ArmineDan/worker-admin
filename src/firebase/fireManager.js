@@ -32,16 +32,30 @@ export function getsubCategories(id) {
 
 export function getActiveUsers() {
    return new Promise((resolve, reject)=>{
-       db.collection('users').get().then((snapshot)=>{
+       db.collection('users').where("status", "==", true).get().then((snapshot)=>{
            const data = [];
-           //const id=[];
+           const id=[];
            snapshot.docs.forEach(doc=>{
                const obj={...doc.data(),id:doc.id}
                data.push(obj);
-             // id.push(doc.id);
-              // console.log(doc.data())
+               id.push(doc.id);
            });
           resolve(data)
        }).catch(e=> reject(e));
    })
+}
+
+export function getArchiveUsers() {
+    return new Promise((resolve, reject)=>{
+        db.collection('users').where("status", "==", false).get().then((snapshot)=>{
+            const data = [];
+            const id=[];
+            snapshot.docs.forEach(doc=>{
+                const obj={...doc.data(),id:doc.id}
+                data.push(obj);
+                id.push(doc.id);
+            });
+           resolve(data)
+        }).catch(e=> reject(e));
+    })
 }
