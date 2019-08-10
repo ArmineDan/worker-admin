@@ -1,6 +1,6 @@
 import React from 'react'
 import {getActiveUsers} from '../src/firebase/fireManager'
-
+import './styles/App.css'
 
 
 class Users extends React.Component{
