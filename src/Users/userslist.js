@@ -1,6 +1,7 @@
 import React from 'react'
 import {getActiveUsers} from '../firebase/fireManager'
 import {db} from "../firebase/firebase";
+import "../styles/App.css";
 
 
 
