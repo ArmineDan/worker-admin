@@ -1,6 +1,5 @@
-import React from 'react'
-import {getArchiveUsers} from '../firebase/fireManager'
-
+import React from 'react';
+import './styles/App.css';
 
 class UsersArchive extends React.Component{
     constructor(){

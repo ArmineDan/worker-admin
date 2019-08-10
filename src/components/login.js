@@ -55,7 +55,7 @@ class Login extends React.Component{
     };
     loginBtnClick =()=>{
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() =>{this.props.signIn(true)}).catch(function(error) {
+            .then(() =>{this.props.history.push('/dashboard')}).catch(function(error) {
             // Handle Errors here.
             //var errorCode = error.code;
             var errorMessage = error.message;

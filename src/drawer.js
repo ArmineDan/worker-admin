@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -17,7 +17,9 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers} from '@fortawesome/free-solid-svg-icons';
 import { faListUl} from '@fortawesome/free-solid-svg-icons';
-
+import Users from './userslist';
+import {history} from 'react-router-dom';
+import Catlist from './components/cgt';
 
 const drawerWidth = 240;
 
@@ -67,24 +69,34 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ResponsiveDrawer(props) {
-  const { container } = props;
+
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [show_current, setShow_current] = React.useState('Users');
+  // function handleDrawerToggle(props) {
+  //   setMobileOpen(!mobileOpen);
+  // }
+    useEffect(()=> {
 
-  function handleDrawerToggle() {
-    setMobileOpen(!mobileOpen);
+    },[show_current] )
+
+const openCurrent =(e)=>{
+
+    setShow_current(e)
+   console.log(e,"wwww")
+
+
   }
-
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {["Users","Categries"].map((text, index) => (
+        {["Users","Categories"].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />}</ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemIcon  >{index % 2 === 0 ? <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />}</ListItemIcon>
+            <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
           </ListItem>
         ))}
       </List>
@@ -105,39 +117,12 @@ function ResponsiveDrawer(props) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" noWrap>
-            Admin 
+            Admin
           </Typography>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
-        
-        <Hidden smUp implementation="css">
-          <Drawer
-            container={container}
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, 
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer
             classes={{
@@ -150,15 +135,15 @@ function ResponsiveDrawer(props) {
           </Drawer>
         </Hidden>
       </nav>
+
       <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography paragraph>
-          
-        </Typography>
-        <Typography paragraph>
-         
-        </Typography>
-      </main>
+          {show_current==='Users'?
+              <Users/>:
+              show_current==='Categories'?<Catlist/>:
+                  null
+                   }
+
+         </main>
     </div>
   );
 }
