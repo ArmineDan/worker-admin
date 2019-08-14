@@ -17,8 +17,10 @@ import { faUsers} from '@fortawesome/free-solid-svg-icons';
 import { faListUl} from '@fortawesome/free-solid-svg-icons';
 import Users from './Users/userslist';
 import {history} from 'react-router-dom';
-import Catlist from './components/cgt';
-
+import SkillList from './components/cgt';
+import UsersArchive from './Users/archiveusers';
+import {faUserTimes} from '@fortawesome/free-solid-svg-icons';
+import './styles/skillListStyle.css';
 const drawerWidth = 240;
 
 
@@ -26,28 +28,28 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
-  
+
   drawer: {
     [theme.breakpoints.up('sm')]: {
       width: drawerWidth,
       flexShrink: 0,
-      
+
     },
   },
   appBar: {
     marginLeft: drawerWidth,
     [theme.breakpoints.up('sm')]: {
-        
-      width: `calc(100% - ${drawerWidth}px)`, 
+
+      width: `calc(100% - ${drawerWidth}px)`,
     },
-    
+
   },
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
       display: 'none',
-      
-    }, 
+
+    },
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
@@ -59,10 +61,10 @@ const useStyles = makeStyles(theme => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    
-    
+
+
   },
-  
+
 
 }));
 
@@ -89,24 +91,24 @@ const openCurrent =(e)=>{
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {["Users","Categories"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon  >{index % 2 === 0 ? <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />}</ListItemIcon>
-            <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {[].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+
+        <List>
+            {["Users","Archived Users"].map((text, index) => (
+                <ListItem button key={text}>
+                    <ListItemIcon  >{index % 2 === 0 ?  <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faUserTimes} style={{color: 'orange'}}/>}</ListItemIcon>
+                    <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
+                </ListItem>
+            ))}
+        </List>
+
+        <List>
+            {["Categories"].map((text, index) => (
+                <ListItem button key={text}>
+                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
+                    <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
+                </ListItem>
+            ))}
+        </List>
     </div>
   );
 
@@ -134,14 +136,17 @@ const openCurrent =(e)=>{
         </Hidden>
       </nav>
 
-      <main className={classes.content}>
-          {show_current==='Users'?
-              <Users/>:
-              show_current==='Categories'?<Catlist/>:
-                  null
-                   }
+        <main className={classes.content}>
+            {show_current==='Users'?
+                <Users/>:
+                show_current==='Archived Users'?
+                    <UsersArchive />:
+                    show_current==='Categories'?
+                        <SkillList  />:
+                        null
+            }
 
-         </main>
+        </main>
     </div>
   );
 }
