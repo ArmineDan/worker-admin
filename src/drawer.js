@@ -21,6 +21,10 @@ import SkillList from './components/cgt';
 import UsersArchive from './Users/archiveusers';
 import {faUserTimes} from '@fortawesome/free-solid-svg-icons';
 import './styles/skillListStyle.css';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+
+
 const drawerWidth = 240;
 
 
@@ -69,14 +73,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ResponsiveDrawer(props) {
-
+  const { container } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
     const [show_current, setShow_current] = React.useState('Users');
-  // function handleDrawerToggle(props) {
-  //   setMobileOpen(!mobileOpen);
-  // }
+   function handleDrawerToggle() {
+   setMobileOpen(!mobileOpen);
+   }
     useEffect(()=> {
 
     },[show_current] )
@@ -117,25 +121,48 @@ const openCurrent =(e)=>{
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+        <IconButton
+           color="inherit"
+           aria-label="open drawer"
+           edge="start"
+           onClick={handleDrawerToggle}
+           className={classes.menuButton}
+         ><MenuIcon /> </IconButton>
           <Typography variant="h6" noWrap>
             Admin
           </Typography>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
-        <Hidden xsDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
-
+       <Hidden smUp implementation="css">
+         <Drawer
+           container={container}
+           variant="temporary"
+           anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+           open={mobileOpen}
+           onClose={handleDrawerToggle}
+           classes={{
+             paper: classes.drawerPaper,
+           }}
+           ModalProps={{
+             keepMounted: true,
+           }}
+         >
+           {drawer}
+         </Drawer>
+       </Hidden>
+       <Hidden xsDown implementation="css">
+         <Drawer
+           classes={{
+             paper: classes.drawerPaper,
+           }}
+           variant="permanent"
+           open
+         >
+           {drawer}
+         </Drawer>
+       </Hidden>
+     </nav>
         <main className={classes.content}>
             {show_current==='Users'?
                 <Users/>:
