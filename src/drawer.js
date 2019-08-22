@@ -136,7 +136,7 @@ console.log(user,'user')
                     <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
                 </ListItem>
             ))}
-
+        </List>
         <List>
             {["Categories",'statistics'].map((text, index) => (
                 <ListItem button key={text}>
@@ -160,8 +160,8 @@ console.log(user,'user')
 
         </List>
     </div>
-  );
 
+)
   return (
     <div className={classes.root}>
       <CssBaseline />

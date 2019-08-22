@@ -39,20 +39,6 @@ export function getActiveUsers() {
    })
 }
 
-export function getSubscribedUsers() {
-   return new Promise((resolve, reject)=>{
-       db.collection('subscribe').get().then((snapshot)=>{
-           const data = [];
-           const id=[];
-           snapshot.docs.forEach(doc=>{
-               const obj={...doc.data(),id:doc.id}
-               data.push(obj);
-               id.push(doc.id);
-           });
-          resolve(data)
-       }).catch(e=> reject(e));
-   })
-}
 
 export function getArchiveUsers() {
     return new Promise((resolve, reject)=>{
