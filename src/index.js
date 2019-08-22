@@ -22,8 +22,10 @@ const theme = createMuiTheme({
 const route=(
     <MuiThemeProvider theme={theme}>
         <Router >
-            <Route exact path="/" component ={Login}/>
-            <Route exact path="/dashboard" component={ResponsiveDrawer} />
+
+             <Route exact path="/" component ={Login}/>;
+             <Route exact path="/dashboard" component={ResponsiveDrawer} />
+
 
         </Router>
     </MuiThemeProvider>

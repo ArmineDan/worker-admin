@@ -3,12 +3,9 @@ export function getActiveCategories() {
    return new Promise((resolve, reject)=>{
        db.collection('Categories').where("status", "==", true).get().then((snapshot)=>{
            const data = [];
-           //const id=[];
            snapshot.docs.forEach(doc=>{
                const obj={...doc.data(),id:doc.id}
                data.push(obj);
-             // id.push(doc.id);
-              // console.log(doc.data())
            });
           resolve(data)
        }).catch(e=> reject(e));
@@ -18,12 +15,9 @@ export function getsubCategories(id) {
    return new Promise((resolve, reject)=>{
        db.collection('Categories').doc(id).collection('sub').get().then((snapshot)=>{
            const data = [];
-           //debugger;
            snapshot.docs.forEach(doc=>{
-               //Tatev
                const obj={...doc.data(),id:doc.id};
                data.push(obj);
-               //data.push(doc.data());Armine
            });
            resolve(data)
        }).catch(e=> reject(e));
@@ -33,6 +27,21 @@ export function getsubCategories(id) {
 export function getActiveUsers() {
    return new Promise((resolve, reject)=>{
        db.collection('users').where("status", "==", true).get().then((snapshot)=>{
+           const data = [];
+           const id=[];
+           snapshot.docs.forEach(doc=>{
+               const obj={...doc.data(),id:doc.id}
+               data.push(obj);
+               id.push(doc.id);
+           });
+          resolve(data)
+       }).catch(e=> reject(e));
+   })
+}
+
+export function getSubscribedUsers() {
+   return new Promise((resolve, reject)=>{
+       db.collection('subscribe').get().then((snapshot)=>{
            const data = [];
            const id=[];
            snapshot.docs.forEach(doc=>{
@@ -60,6 +69,7 @@ export function getArchiveUsers() {
     })
 }
 
+
 export function getSubscribedUsers() {
     return new Promise((resolve, reject)=>{
         db.collection('subscribe').get().then((snapshot)=>{
@@ -74,3 +84,21 @@ export function getSubscribedUsers() {
         }).catch(e=> reject(e));
     })
   }
+
+
+export function editSubCategorie(cat_id,sub_id,obj) {
+    return new Promise((resolve, reject) => {
+        db.collection('Categories').doc(cat_id).collection('sub').doc(sub_id).update(obj).then((data)=>{
+            resolve(data)
+        }).catch(e=> reject(e));
+    })
+}
+
+export function editCategorie(cat_id,obj) {
+    return new Promise((resolve, reject) => {
+        db.collection('Categories').doc(cat_id).update(obj).then((data)=>{
+            resolve(data)
+        }).catch(e=> reject(e));
+    })
+}
+

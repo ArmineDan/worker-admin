@@ -50,9 +50,12 @@
 .preStyle{
   width: 30px;
 }
+.preStyle1{
+  width: 110px;
+}
 .list{
   margin-top: 5px;
-  margin-right: -20px;
+
   height: 20px;
   width: 20px;
 }
@@ -72,4 +75,64 @@
 .active:active {
   position:relative;
   top:1px;
+}
+
+.listDiv{
+  width: 100%;
+  max-width: 400px;
+
+}
+.sendIcon{
+  margin-left: 5px;
+  margin-top: -25px;
+  border-radius: 20%;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.sendIcon:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: #d0d8cd;
+}
+
+
+.inputDiv{
+  margin-left:500px ;
+  margin-top: -205px;
+   display: flex;
+  max-width: 550px;
+
+}
+
+/*.dv{*/
+  /*display: flex;*/
+/*}*/
+.sendInp{
+  margin-top: -30px;
+  max-width: 550px;
+  min-width: 100px;
+  width: 100%;
+  -moz-box-shadow: 0px 0px 33px -15px #ffcba3;
+  -webkit-box-shadow: 0px 0px 33px -15px #fffbfb;
+  box-shadow: 0px 0px 33px -15px #7a5546;
+  background-color: rgba(255, 255, 255, 0.69);
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:3px solid #ff7e37;
+  color: #ffa859;
+  font-family:"Segoe UI";
+  font-size:12px;
+  text-align: left;
+  position: relative;
+
+}
+
+
+
+
+
+.sendIcon:active {
+  position:relative;
+  top:2px;
 }
