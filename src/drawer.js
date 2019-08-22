@@ -1,8 +1,9 @@
 import React,{useEffect} from 'react';
 import PropTypes from 'prop-types';
+import Subscribe from './components/subscribe'
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
+import Icons from './components/icons list';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import List from '@material-ui/core/List';
@@ -15,15 +16,19 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers} from '@fortawesome/free-solid-svg-icons';
 import { faListUl} from '@fortawesome/free-solid-svg-icons';
+import { faBoxes} from '@fortawesome/free-solid-svg-icons'
 import Users from './Users/userslist';
 import {history} from 'react-router-dom';
 import SkillList from './components/cgt';
 import UsersArchive from './Users/archiveusers';
 import {faUserTimes} from '@fortawesome/free-solid-svg-icons';
+import{faBell} from '@fortawesome/free-solid-svg-icons';
 import './styles/skillListStyle.css';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import {fire} from './firebase/firebase';
+import Logout from './components/logout'
 const drawerWidth = 240;
-
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -69,22 +74,41 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ResponsiveDrawer(props) {
-
+  const {container} = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
     const [show_current, setShow_current] = React.useState('Users');
-  // function handleDrawerToggle(props) {
-  //   setMobileOpen(!mobileOpen);
-  // }
+  function handleDrawerToggle() {
+    setMobileOpen(!mobileOpen);
+  }
     useEffect(()=> {
+        user_status();
 
-    },[show_current] )
+
+    },[show_current,props] )
+
 
 const openCurrent =(e)=>{
 
     setShow_current(e)
-   console.log(e,"wwww")
+   //console.log(e,"wwww")
+
+
+  }
+  const user_status =()=>{
+
+      fire.auth().onAuthStateChanged((user) => {
+          if (user) {
+console.log(user,'user')
+          }
+          else
+          {
+              props.history.push('/')
+          }
+
+      })
+
 
 
   }
@@ -99,15 +123,27 @@ const openCurrent =(e)=>{
                     <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
                 </ListItem>
             ))}
-        </List>
 
-        <List>
             {["Categories"].map((text, index) => (
                 <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
             ))}
+
+            {["Icons Collection"].map((text, index) => (
+                <ListItem button key={text}>
+                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faBoxes} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
+                    <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
+                </ListItem>
+            ))}
+            {["Subscribed Users"].map((text, index) => (
+                <ListItem button key={text}>
+                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faBell} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
+                    <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
+                </ListItem>
+            ))}
+
         </List>
     </div>
   );
@@ -117,25 +153,49 @@ const openCurrent =(e)=>{
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
+          <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              className={classes.menuButton}
+          ><MenuIcon /> </IconButton>
           <Typography variant="h6" noWrap>
             Admin
           </Typography>
+          <Logout/>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
+        <Hidden smUp implementation="css">
+          <Drawer
+              container={container}
+              variant="temporary"
+              anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              classes={{
+                  paper: classes.drawerPaper,
+              }}
+              ModalProps={{
+                  keepMounted: true,
+              }}
+          >
+              {drawer}
+          </Drawer>
+        </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open
+              classes={{
+                  paper: classes.drawerPaper,
+              }}
+              variant="permanent"
+              open
           >
-            {drawer}
+              {drawer}
           </Drawer>
         </Hidden>
       </nav>
-
         <main className={classes.content}>
             {show_current==='Users'?
                 <Users/>:
@@ -143,7 +203,11 @@ const openCurrent =(e)=>{
                     <UsersArchive />:
                     show_current==='Categories'?
                         <SkillList  />:
-                        null
+                        show_current==='Icons Collection'?
+                            <Icons/> :
+                            show_current==='Subscribed Users'?
+                                <Subscribe/>:
+                            null
             }
 
         </main>
@@ -152,7 +216,7 @@ const openCurrent =(e)=>{
 }
 
 ResponsiveDrawer.propTypes = {
- 
+
   container: PropTypes.object,
 };
 

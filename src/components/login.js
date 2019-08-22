@@ -49,26 +49,50 @@ class Login extends React.Component{
         }
     }
 
+    componentDidMount(){
+        fire.auth().onAuthStateChanged((user) => {
+            if (user) {
+                console.log(user,'user')
+               this.props.history.push('/dashboard')
+            }
+
+
+        })
+    }
+    handleSubmit = (e)=>{
+        if(e.keyCode === 13) {
+            fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+                .then(() => {
+                    this.props.history.push('/dashboard')
+                }).catch(function (error) {
+                var errorMessage = error.message;
+                alert(errorMessage);
+                // ...
+            });
+        }
+    }
 
     handleChange= (e) =>{
         this.setState({[e.target.name]: e.target.value});
     };
-    loginBtnClick =()=>{
+    loginBtnClick =(e)=>{
+
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then(() =>{this.props.history.push('/dashboard')}).catch(function(error) {
-            // Handle Errors here.
-            //var errorCode = error.code;
             var errorMessage = error.message;
             alert(errorMessage);
-            // ...
+        // ...
         });
     };
     render() {
         return(
+            <form onKeyDown={this.handleSubmit }>
             <div className="loginDiv">
                 <AccountCircle style = {myStyles.icon}/>
                 <ThemeProvider theme={theme}>
+
                     <TextField
+                                className='loginInput'
                                color="red"
                                id="outlined-email-input"
                                label="Email*"
@@ -80,6 +104,8 @@ class Login extends React.Component{
                                onChange={this.handleChange}
                     />
                     <TextField
+                        className='loginInput'
+
                         id="outlined-password-input"
                         label="Password*"
                         name ="password"
@@ -89,12 +115,16 @@ class Login extends React.Component{
                         variant="outlined"
                         onChange={this.handleChange}
                     />
-                    <Button onClick={this.loginBtnClick} variant="contained" color="primary" >Log in</Button>
+
+
+                    <Button onClick={this.loginBtnClick} variant="contained" color="primary" className="loginBtn" >Log in</Button>
                     <h6 className="regLine"> Admin </h6>
                 </ThemeProvider>
 
 
             </div>
+            </form>
+
         )
     }
 
