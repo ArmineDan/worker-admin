@@ -1,0 +1,19 @@
+webpackHotUpdate("main",{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/styles/App.css":
+/*!*******************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/styles/App.css ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "@media only screen and (max-width: 999999999px) {\r\n#customers, #categories{\r\n  font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\r\n  border-collapse: collapse;\r\n  width: 100%;\r\n  margin-top: 70px;\r\n\r\n}\r\n\r\n#customers td, #customers th {\r\n  border: 1px solid #ddd;\r\n  padding: 8px;\r\n}\r\n\r\n#customers tr:nth-child(even){background-color: #f2f2f2;}\r\n\r\n#customers tr:hover {background-color: #ddd;}\r\n\r\n#customers th {\r\n  padding-top: 12px;\r\n  padding-bottom: 12px;\r\n  text-align: left;\r\n  background-color: orange;\r\n  color: black;\r\n}\r\n #i{\r\n  margin-left: 100%;\r\n   color: crimson\r\n }\r\n #b{\r\n   color: crimson\r\n }\r\n  .archive {\r\n    margin-left: 20px;\r\n    height: 30px;\r\n    width: 30px;\r\n    color: white;\r\n    cursor: pointer;\r\n    border-radius:100% ;\r\n  }}\r\n.archive:hover {\r\n  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);\r\n  background-color: #d0d8cd;\r\n}\r\n.archive:active {\r\n  position:relative;\r\n  top:1px;\r\n}\r\n.preStyle{\r\n  width: 30px;\r\n}\r\n.list{\r\n  margin-top: 5px;\r\n  margin-right: -20px;\r\n  height: 20px;\r\n  width: 20px;\r\n}\r\n\r\n.active {\r\n  margin-left: 20px;\r\n  height: 30px;\r\n  width: 30px;\r\n  color: white;\r\n  cursor: pointer;\r\n  border-radius:100% ;\r\n}\r\n.active:hover {\r\n  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);\r\n  background-color: #d0d8cd;\r\n}\r\n.active:active {\r\n  position:relative;\r\n  top:1px;\r\n}", ""]);
+
+
+
+/***/ })
+
+})
+//# sourceMappingURL=main.10c2a954e5806d0d37f0.hot-update.js.map

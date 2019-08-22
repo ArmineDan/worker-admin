@@ -70,6 +70,22 @@ export function getArchiveUsers() {
 }
 
 
+export function getSubscribedUsers() {
+    return new Promise((resolve, reject)=>{
+        db.collection('subscribe').get().then((snapshot)=>{
+            const data = [];
+            const id=[];
+            snapshot.docs.forEach(doc=>{
+                const obj={...doc.data(),id:doc.id}
+                data.push(obj);
+                id.push(doc.id);
+            });
+           resolve(data)
+        }).catch(e=> reject(e));
+    })
+  }
+
+
 export function editSubCategorie(cat_id,sub_id,obj) {
     return new Promise((resolve, reject) => {
         db.collection('Categories').doc(cat_id).collection('sub').doc(sub_id).update(obj).then((data)=>{
@@ -85,3 +101,4 @@ export function editCategorie(cat_id,obj) {
         }).catch(e=> reject(e));
     })
 }
+

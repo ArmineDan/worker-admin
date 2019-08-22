@@ -1,4 +1,5 @@
 @media only screen and (max-width: 999999999px) {
+
 #customers, #categories{
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -23,7 +24,13 @@
   background-color: orange;
   color: black;
 }
-
+ #i{
+  margin-left: 72%;
+   color: crimson
+ }
+ #b{
+   color: crimson
+ }
   .archive {
     margin-left: 20px;
     height: 30px;

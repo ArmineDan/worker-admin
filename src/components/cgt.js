@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 
 function SkillList() {
     const[catData,setData] = useState([]);
-    const[subData,setSubData] = useState([]);
+    //const[subData,setSubData] = useState([]);
     const[loading,setLoading]= useState(false);
     const classes = useStyles();
     const [openIds, setOpen] = useState([]);
@@ -148,7 +148,6 @@ function SkillList() {
         getActiveCategories().then(data => {
                 setData(data);
                 setLoading(true);
-
             }
         );
 

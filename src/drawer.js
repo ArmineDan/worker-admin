@@ -18,16 +18,19 @@ import { faUsers} from '@fortawesome/free-solid-svg-icons';
 import { faListUl} from '@fortawesome/free-solid-svg-icons';
 import { faBoxes} from '@fortawesome/free-solid-svg-icons'
 import Users from './Users/userslist';
-import {history} from 'react-router-dom';
+//import {history} from 'react-router-dom';
 import SkillList from './components/cgt';
 import UsersArchive from './Users/archiveusers';
 import {faUserTimes} from '@fortawesome/free-solid-svg-icons';
 import{faBell} from '@fortawesome/free-solid-svg-icons';
 import './styles/skillListStyle.css';
 import IconButton from '@material-ui/core/IconButton';
+import { faChartBar} from '@fortawesome/free-solid-svg-icons';
+import Statics from '../src/statics';
 import MenuIcon from '@material-ui/icons/Menu';
 import {fire} from './firebase/firebase';
 import Logout from './components/logout'
+
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -70,9 +73,18 @@ const useStyles = makeStyles(theme => ({
 
 
   },
-
+  title: {
+    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  
 
 }));
+
+
 
 function ResponsiveDrawer(props) {
   const {container} = props;
@@ -125,9 +137,10 @@ console.log(user,'user')
                 </ListItem>
             ))}
 
-            {["Categories"].map((text, index) => (
+        <List>
+            {["Categories",'statistics'].map((text, index) => (
                 <ListItem button key={text}>
-                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
+                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faChartBar} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
             ))}
@@ -203,12 +216,15 @@ console.log(user,'user')
                 show_current==='Archived Users'?
                     <UsersArchive />:
                     show_current==='Categories'?
-                        <SkillList  />:
+                        <SkillList/>:
+                    show_current==='statistics'?
+                    <Statics/>:                       
                         show_current==='Icons Collection'?
                             <Icons/> :
                             show_current==='Subscribed Users'?
                                 <Subscribe/>:
                             null
+
             }
 
         </main>
