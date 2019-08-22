@@ -28,6 +28,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {fire} from './firebase/firebase';
 import Logout from './components/logout'
+
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
