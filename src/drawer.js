@@ -2,7 +2,7 @@ import React,{useEffect} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Divider from '@material-ui/core/Divider';
+//import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import List from '@material-ui/core/List';
@@ -16,13 +16,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers} from '@fortawesome/free-solid-svg-icons';
 import { faListUl} from '@fortawesome/free-solid-svg-icons';
 import Users from './Users/userslist';
-import {history} from 'react-router-dom';
+//import {history} from 'react-router-dom';
 import SkillList from './components/cgt';
 import UsersArchive from './Users/archiveusers';
 import {faUserTimes} from '@fortawesome/free-solid-svg-icons';
 import './styles/skillListStyle.css';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
+import { faChartBar} from '@fortawesome/free-solid-svg-icons';
+import Statics from '../src/statics';
+
 
 
 const drawerWidth = 240;
@@ -68,9 +71,18 @@ const useStyles = makeStyles(theme => ({
 
 
   },
-
+  title: {
+    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  
 
 }));
+
+
 
 function ResponsiveDrawer(props) {
   const { container } = props;
@@ -106,9 +118,9 @@ const openCurrent =(e)=>{
         </List>
 
         <List>
-            {["Categories"].map((text, index) => (
+            {["Categories",'statistics'].map((text, index) => (
                 <ListItem button key={text}>
-                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
+                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faChartBar} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
             ))}
@@ -169,8 +181,9 @@ const openCurrent =(e)=>{
                 show_current==='Archived Users'?
                     <UsersArchive />:
                     show_current==='Categories'?
-                        <SkillList  />:
-                        null
+                        <SkillList/>:
+                    show_current==='statistics'?
+                    <Statics/>:null
             }
 
         </main>

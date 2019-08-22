@@ -4,6 +4,9 @@ import {db} from "../firebase/firebase";
 import "../styles/App.css";
 import archive from '../images/archive.png';
 import list from '../images/list.png'
+import '../styles/search.css'
+
+
 
 
 
@@ -12,10 +15,12 @@ class Users extends React.Component{
     constructor(){
         super();
         this.state={
-            list: []    }
+            list: [],
+            search: ''
+            }
 
 
-    }
+    };
 
     componentDidMount(){
 
@@ -31,15 +36,20 @@ class Users extends React.Component{
         }).catch((e)=>console.log)
 
     }
+    updateSearch(event){
+        this.setState({search: event.target.value.substr(0,20)})
+    }
 
 
     render(){
-
-
-
+     let filteredName=this.state.list.filter(
+         (item)=>{
+             return item.firstName.toLowerCase().indexOf(this.state.search)!==-1
+         }
+     )
         let list_user='';
         if(this.state.list ){
-            list_user =this.state.list.map((item,index)=>{
+            list_user =filteredName.map((item,index)=>{
                 return(
 
                     <tr key={index} id='customers'>
@@ -57,23 +67,34 @@ class Users extends React.Component{
 
 
         return(
-            <div>
-
-
+            <div> 
+                <input id='in'
+                    type='text'
+                    value={this.state.search}
+                    onChange={this.updateSearch.bind(this)}
+                    placeholder='Search...'></input>    
                 <table id="customers">
+                
                     <tbody>
+                        
                     <tr>
                         <th><img src={list} alt='list' className='list'/></th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
                         <th className='preStyle'>Permission</th>
+                        
                     </tr>
+                   
+                    
                     {list_user}
+                    
                     </tbody>
+                    
+                    
                 </table>
-
-
+                
+             
             </div>
         )
     }

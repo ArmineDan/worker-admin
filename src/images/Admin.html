@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3002/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3002/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3002/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Admin</title>
+  <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}</style><style type="text/css">.regLine {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:dimgray;
+    margin: 30px auto;
+}
+
+.regLine:before,
+.regLine:after {
+    content: '';
+    border-top: 2px solid;
+    margin: 0 10px 0 10px;
+    flex: 1 0 20px;
+}
+.loginDiv{
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px auto;
+    text-align: center;
+    flex-direction: column;
+    width: 50vh;
+    padding: 10px;
+    border-radius: 5px;
+    height: 70vh;
+}</style><style type="text/css">@media only screen and (max-width: 999999999px) {
+#customers, #categories{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 70px;
+
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: orange;
+  color: black;
+}
+ #i{
+  margin-left: 70%;
+   color: crimson
+ }
+ #b{
+   color: crimson
+ }
+  .archive {
+    margin-left: 20px;
+    height: 30px;
+    width: 30px;
+    color: white;
+    cursor: pointer;
+    border-radius:100% ;
+  }}
+.archive:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: #d0d8cd;
+}
+.archive:active {
+  position:relative;
+  top:1px;
+}
+.preStyle{
+  width: 30px;
+}
+.list{
+  margin-top: 5px;
+  margin-right: -20px;
+  height: 20px;
+  width: 20px;
+}
+
+.active {
+  margin-left: 20px;
+  height: 30px;
+  width: 30px;
+  color: white;
+  cursor: pointer;
+  border-radius:100% ;
+}
+.active:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+  background-color: #d0d8cd;
+}
+.active:active {
+  position:relative;
+  top:1px;
+}</style><style type="text/css">.skillDiv{
+    height: fit-content;
+    display: flex;
+    background-color: orange;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px auto;
+    margin-top: -20px;
+    text-align: center;
+    flex-direction: column;
+    width: 50vh;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 72px;
+}
+.MuiCollapse-wrapper {
+    margin-top: 8px;
+    background-color: #e6efe4;
+    display: flex;
+}
+.MuiListItem-gutters {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.MuiListItem-root {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+.addIcon{
+    margin-top: 3px;
+    border-width: 2px;
+    border-radius: 100%;
+    margin-left: 13px;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    cursor: pointer;
+}
+.addIcon:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+    background-color: #c1cbbe;
+}
+.addIcon:active {
+    position:relative;
+    top:1px;
+}
+.deleteIcon{
+
+    height: 20px;
+    width: 20px;
+    position: relative;
+    cursor: pointer;
+
+}
+.deleteIcon:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+    background-color: #c1cbbe;
+}
+.deleteIcon:active {
+    position:relative;
+    top:1px;
+}
+.div1{
+    margin-top: 5px;
+    display: flex;
+
+}
+.div2{
+    margin-left: 30px;
+    margin-top: 5px;
+    display: flex;
+
+}
+.subInp{
+
+    margin-left: 5px;
+    box-shadow: 0px 0px 33px -15px #747a72;
+    background-color: rgba(188, 188, 188, 0.69);
+    border-radius:6px;
+    border:3px solid #acb3aa;
+    color:#ffffff;
+    font-family:"Segoe UI";
+    font-size:12px;
+    padding:5px 10px;
+    text-align: left;
+    margin-left: 35px;
+
+}
+.add{ margin-top: 3px;
+    border-width: 2px;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.add:active {
+    position:relative;
+    top:1px;
+}
+.ctgInp{
+
+    margin-left: 5px;
+    box-shadow: 0px 0px 33px -15px #747a72;
+    background-color: rgba(188, 188, 188, 0.69);
+    border-radius:6px;
+    border:3px solid #acb3aa;
+    color:#ffffff;
+    font-family:"Segoe UI";
+    font-size:12px;
+    padding:5px 30px;
+    text-align: left;
+    margin-left: 30px;
+
+}
+
+</style><script charset="utf-8" src="./Admin_files/main.5e784730564c1a9feec3.hot-update.js.download"></script><script charset="utf-8" src="./Admin_files/main.225665b17ccdf4f781c3.hot-update.js.download"></script><script charset="utf-8" src="./Admin_files/main.917f89e93e1dc8ba3a79.hot-update.js.download"></script><script charset="utf-8" src="./Admin_files/main.9b43cf29212a529bf925.hot-update.js.download"></script></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div><input id="i" placeholder="Search.."><button type="button" id="b">Search</button></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./Admin_files/bundle.js.download"></script><script src="./Admin_files/1.chunk.js.download"></script><script src="./Admin_files/main.chunk.js.download"></script><script src="./Admin_files/main.10c2a954e5806d0d37f0.hot-update.js.download"></script>
+
+</body></html>

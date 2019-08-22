@@ -4,6 +4,8 @@ import {getArchiveUsers} from '../firebase/fireManager'
 import {db} from '../firebase/firebase'
 import active from '../images/active.png';
 import list from '../images/list.png'
+
+
 class UsersArchive extends React.Component{
     constructor(){
         super();
@@ -29,14 +31,22 @@ class UsersArchive extends React.Component{
         }).catch((e)=>console.log)
 
     }
+    updateSearch(event){
+        this.setState({search: event.target.value.substr(0,20)})
+    }
+
 
 
     render(){
-
+        let filteredName=this.state.list.filter(
+            (item)=>{
+                return item.firstName.indexOf(this.state.search)!==-1
+            }
+        )
 
         let list_user='';
         if(this.state.list ){
-            list_user =this.state.list.map((item,index)=>{
+            list_user =filteredName.map((item,index)=>{
                 return(
 
                     <tr key={index} >
@@ -56,6 +66,11 @@ class UsersArchive extends React.Component{
         return(
             <div id='archive'>
 
+                  <input id='i'
+                    type='text'
+                    value={this.state.search}
+                    onChange={this.updateSearch.bind(this)}></input>
+                
                 <table id="customers">
                     <tbody>
                     <tr>
@@ -65,6 +80,7 @@ class UsersArchive extends React.Component{
                         <th>Email</th>
                         <th className="preStyle">Permission</th>
                     </tr>
+                    
                     {list_user}
                     </tbody>
                 </table>
