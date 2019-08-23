@@ -72,7 +72,7 @@ class Users extends React.Component{
                     type='text'
                     value={this.state.search}
                     onChange={this.updateSearch.bind(this)}
-                    placeholder='Search...'></input>    
+                    placeholder='Search...'/>
                 <table id="customers">
                 
                     <tbody>
