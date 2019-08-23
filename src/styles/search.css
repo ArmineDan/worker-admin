@@ -1,5 +1,18 @@
-@media only screen and (max-width: 999999999px) {
+
 #in{
-    top: 100px;
+    width: 100%;
+    max-width: 260px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 80px;
+    right: 60px;
+    outline: none;
+    
 }
+ 
+#bu{ 
+   
+    position: absolute;
+    top: 80px;
+    right: 60px;
 }
