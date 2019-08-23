@@ -26,7 +26,7 @@ class Subscribe extends React.Component {
         this.setState({
             message: ''
         })
-        console.log(this.state.message)
+        //console.log(this.state.message)
         e.preventDefault()
 
     }
@@ -34,7 +34,7 @@ class Subscribe extends React.Component {
 
     handleClick=(e) =>{
 
-        console.log(this.state.message)
+        //console.log(this.state.message)
         this.setState({
             message: ''
         })

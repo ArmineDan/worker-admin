@@ -75,12 +75,10 @@ this.setState({search: ''})
                     type='text'
                     value={this.state.search}
                     onChange={this.updateSearch.bind(this)}
-                    placeholder='Search...'></input>    
+                    placeholder='Search...'/>  
                     <button  id='bu' type='button' onClick={this.delet.bind(this)}><FontAwesomeIcon icon={faTimes} style={{color: 'orange'}}  /></button>
-                <table id="customers">
-                
-                    <tbody>
-                        
+                <table id="customers">                
+                    <tbody>                        
                     <tr>
                         <th><img src={list} alt='list' className='list'/></th>
                         <th>First Name</th>

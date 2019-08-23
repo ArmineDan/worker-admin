@@ -18,7 +18,6 @@ import { faUsers} from '@fortawesome/free-solid-svg-icons';
 import { faListUl} from '@fortawesome/free-solid-svg-icons';
 import { faBoxes} from '@fortawesome/free-solid-svg-icons'
 import Users from './Users/userslist';
-//import {history} from 'react-router-dom';
 import SkillList from './components/cgt';
 import UsersArchive from './Users/archiveusers';
 import {faUserTimes} from '@fortawesome/free-solid-svg-icons';
@@ -99,7 +98,7 @@ function ResponsiveDrawer(props) {
         user_status();
 
 
-    },[show_current,props] )
+    },[show_current,props,] )
 
 
 const openCurrent =(e)=>{
@@ -113,7 +112,7 @@ const openCurrent =(e)=>{
 
       fire.auth().onAuthStateChanged((user) => {
           if (user) {
-console.log(user,'user')
+//console.log(user,'user')
           }
           else
           {
@@ -136,9 +135,8 @@ console.log(user,'user')
                     <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
                 </ListItem>
             ))}
-    
-            {["Categories",'Statistics'].map((text, index) => (
-                <ListItem button key={text}>
+           {["Categories",'Statistics'].map((text, index) => (
+            <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faChartBar} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
