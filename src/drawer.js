@@ -135,9 +135,8 @@ const openCurrent =(e)=>{
                     <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
                 </ListItem>
             ))}
-
-            {["Categories",'statistics'].map((text, index) => (
-                <ListItem button key={text}>
+           {["Categories",'Statistics'].map((text, index) => (
+            <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faChartBar} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
@@ -149,7 +148,7 @@ const openCurrent =(e)=>{
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
             ))}
-            {["Subscribed Users"].map((text, index) => (
+            {["Subscribetions"].map((text, index) => (
                 <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faBell} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
@@ -215,11 +214,11 @@ const openCurrent =(e)=>{
                     <UsersArchive />:
                     show_current==='Categories'?
                         <SkillList/>:
-                    show_current==='statistics'?
+                    show_current==='Statistics'?
                     <Statics/>:                       
                         show_current==='Icons Collection'?
                             <Icons/> :
-                            show_current==='Subscribed Users'?
+                            show_current==='Subscribetions'?
                                 <Subscribe/>:
                             null
 

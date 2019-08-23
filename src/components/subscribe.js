@@ -4,6 +4,7 @@ import {db} from "../firebase/firebase";
 import "../styles/App.css";
 import list from '../images/list.png';
 import sendIcon from '../images/sendIcon.svg';
+import '../styles/iconsTitl.css'
 
 
 class Subscribe extends React.Component {
@@ -73,6 +74,7 @@ class Subscribe extends React.Component {
 
         return (
             <div className="dv">
+                <h1 className='t'>Subscribtions</h1>
                 <div className="listDiv">
 
 

@@ -4,20 +4,23 @@ import {getArchiveUsers} from '../firebase/fireManager'
 import {db} from '../firebase/firebase'
 import active from '../images/active.png';
 import list from '../images/list.png'
-
+import '../styles/search.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 class UsersArchive extends React.Component{
     constructor(){
         super();
         this.state={
-            list: []    }
+            list: [], 
+            search: ''   }
 
 
     }
 
     componentDidMount(){
 
-        getArchiveUsers().then(data=>{
+    getArchiveUsers().then(data=>{
 
             this.setState({list: data})
             console.log(data)
@@ -33,8 +36,12 @@ class UsersArchive extends React.Component{
     }
     updateSearch(event){
         this.setState({search: event.target.value.substr(0,20)})
-    }
+            }
 
+ delet(){   
+       this.setState({search: ''})
+                }
+                
 
 
     render(){
@@ -65,11 +72,14 @@ class UsersArchive extends React.Component{
 
         return(
             <div id='archive'>
-
-                  <input id='i'
+                     <h1 className="title">Archived Users</h1>
+                  <input id='in'
                     type='text'
                     value={this.state.search}
-                    onChange={this.updateSearch.bind(this)}></input>
+                    onChange={this.updateSearch.bind(this)}
+                    placeholder='Search...'
+                    ></input>
+                    <button id='bu' type='button' onClick={this.delet.bind(this)}><FontAwesomeIcon icon={faTimes} style={{color: 'orange'}}  /></button>
                 
                 <table id="customers">
                     <tbody>

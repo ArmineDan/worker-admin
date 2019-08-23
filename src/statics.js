@@ -2,8 +2,9 @@ import React from 'react'
 import {getActiveUsers} from '../src/firebase/fireManager'
 import {getArchiveUsers} from '../src/firebase/fireManager'
 import {getSubscribedUsers} from '../src/firebase/fireManager'
-import {faMale} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import '../src/styles/statics.css'
+
+
 
 class Statics extends React.Component{
     constructor(props){
@@ -53,8 +54,28 @@ class Statics extends React.Component{
     render(){
         
         return(
-            <div> 
-                
+            <div > 
+                <h1 className="title">Statics</h1>
+<div>               
+                <div id='d1'>
+                <h2>  {this.state.activeCount} </h2>
+                <p>Active Users</p>
+                </div>
+                </div> 
+<div>
+                <div id='d2'>
+                <h2>{this.state.archiveCount}</h2>
+                <p>Archived Users</p>
+                </div> 
+                       </div>
+
+
+ <div>
+                <div id='d3'>
+                <h2>{this.state.subscribedCount}</h2>
+                <p>Subscriptions</p>
+                </div>
+                </div>
             </div>
         )
     }

@@ -5,7 +5,8 @@ import "../styles/App.css";
 import archive from '../images/archive.png';
 import list from '../images/list.png'
 import '../styles/search.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -39,12 +40,14 @@ class Users extends React.Component{
     updateSearch(event){
         this.setState({search: event.target.value.substr(0,20)})
     }
-
+delet(){
+this.setState({search: ''})
+}
 
     render(){
      let filteredName=this.state.list.filter(
          (item)=>{
-             return item.firstName.toLowerCase().indexOf(this.state.search)!==-1
+             return item.firstName.indexOf(this.state.search)!==-1
          }
      )
         let list_user='';
@@ -67,16 +70,15 @@ class Users extends React.Component{
 
 
         return(
-            <div> 
+            <div> <h1 className="title">Users</h1>
                 <input id='in'
                     type='text'
                     value={this.state.search}
                     onChange={this.updateSearch.bind(this)}
-                    placeholder='Search...'/>
-                <table id="customers">
-                
-                    <tbody>
-                        
+                    placeholder='Search...'/>  
+                    <button  id='bu' type='button' onClick={this.delet.bind(this)}><FontAwesomeIcon icon={faTimes} style={{color: 'orange'}}  /></button>
+                <table id="customers">                
+                    <tbody>                        
                     <tr>
                         <th><img src={list} alt='list' className='list'/></th>
                         <th>First Name</th>

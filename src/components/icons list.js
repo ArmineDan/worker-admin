@@ -2,11 +2,15 @@ import React from 'react';
 import './icons/New folder/css/bootstrap.css';
 import './icons/New folder/css/construction-icons.css';
 import './icons/New folder/css/font-icons.css';
+import '../styles/iconsTitl.css'
+
 
 class Icons extends React.Component {
     render(){
         return(
+            
             <section id="content">
+                <h1 className='t'>Icons Callection</h1>
                 <div className="content-wrap">
                     <div className="container clearfix">
                         <div className="heading-block center nobottomborder bottommargin-sm">

@@ -154,6 +154,7 @@ function SkillList() {
     }, [name,status,obj]);
 
     return (<>
+    <h1 className="title">Categories</h1>
 
     <div className='skillDiv' style={{display:loading?'block':'none'}}>
         { catData.map(value => {
