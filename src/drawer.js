@@ -1,9 +1,7 @@
 import React,{useEffect} from 'react';
 import PropTypes from 'prop-types';
-import Subscribe from './components/subscribe'
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Icons from './components/icons list';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import List from '@material-ui/core/List';
@@ -16,19 +14,17 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers} from '@fortawesome/free-solid-svg-icons';
 import { faListUl} from '@fortawesome/free-solid-svg-icons';
-import { faBoxes} from '@fortawesome/free-solid-svg-icons'
-import Users from './Users/userslist';
-import SkillList from './components/cgt';
-import UsersArchive from './Users/archiveusers';
+import { faBoxes} from '@fortawesome/free-solid-svg-icons';
 import {faUserTimes} from '@fortawesome/free-solid-svg-icons';
 import{faBell} from '@fortawesome/free-solid-svg-icons';
 import './styles/skillListStyle.css';
 import IconButton from '@material-ui/core/IconButton';
 import { faChartBar} from '@fortawesome/free-solid-svg-icons';
-import Statics from '../src/statics';
+
 import MenuIcon from '@material-ui/icons/Menu';
 import {fire} from './firebase/firebase';
-import Logout from './components/logout'
+import Logout from './components/logout';
+import {Link} from "react-router-dom";
 
 
 const drawerWidth = 240;
@@ -100,19 +96,11 @@ function ResponsiveDrawer(props) {
 
     },[show_current,props,] )
 
-
-const openCurrent =(e)=>{
-
-    setShow_current(e)
-   //console.log(e,"wwww")
-
-
-  }
   const user_status =()=>{
 
       fire.auth().onAuthStateChanged((user) => {
           if (user) {
-//console.log(user,'user')
+
           }
           else
           {
@@ -127,32 +115,40 @@ const openCurrent =(e)=>{
   const drawer = (
     <div>
       <div className={classes.toolbar} />
-
+        
         <List>
             {["Users","Archived Users"].map((text, index) => (
+                <Link to ={ `/${text==='Users'?'users':'archives'}`}>
                 <ListItem button key={text}>
                     <ListItemIcon  >{index % 2 === 0 ?  <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faUserTimes} style={{color: 'orange'}}/>}</ListItemIcon>
-                    <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
+                    <ListItemText style={{color: 'white'}}  primary={text} />
                 </ListItem>
+                </Link>
             ))}
            {["Categories",'Statistics'].map((text, index) => (
+               <Link to ={ `/${text==='Categories'?'categories':'statistics'}`}>
             <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faChartBar} style={{color: 'orange'}}  />}</ListItemIcon>
-                    <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
+                    <ListItemText style={{color: 'white'}}  primary={text}  />
                 </ListItem>
+               </Link>
             ))}
 
             {["Icons Collection"].map((text, index) => (
+                <Link to = '/icons'>
                 <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faBoxes} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
-                    <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
+                    <ListItemText style={{color: 'white'}}  primary={text} />
                 </ListItem>
+                </Link>
             ))}
-            {["Subscribetions"].map((text, index) => (
+            {["Subscriptions"].map((text, index) => (
+                <Link to = '/subscriptions'>
                 <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faBell} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
-                    <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
+                    <ListItemText style={{color: 'white'}}  primary={text}/>
                 </ListItem>
+                </Link>
             ))}
 
         </List>
@@ -208,21 +204,6 @@ const openCurrent =(e)=>{
         </Hidden>
       </nav>
         <main className={classes.content}>
-            {show_current==='Users'?
-                <Users/>:
-                show_current==='Archived Users'?
-                    <UsersArchive />:
-                    show_current==='Categories'?
-                        <SkillList/>:
-                    show_current==='Statistics'?
-                    <Statics/>:                       
-                        show_current==='Icons Collection'?
-                            <Icons/> :
-                            show_current==='Subscribetions'?
-                                <Subscribe/>:
-                            null
-
-            }
 
         </main>
     </div>

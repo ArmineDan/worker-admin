@@ -83,7 +83,7 @@ h1.title{
 .listDiv{
   width: 100%;
   max-width: 400px;
-
+min-height: 300px;
 }
 .sendIcon{
   margin-left: 5px;
