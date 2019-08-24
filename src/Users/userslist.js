@@ -45,7 +45,7 @@ this.setState({search: ''})
     render(){
      let filteredName=this.state.list.filter(
          (item)=>{
-             return item.firstName.indexOf(this.state.search)!==-1
+             return item.firstName.indexOf(this.state.search)!==-1 || item.lastName.indexOf(this.state.search)!==-1 || item.email.indexOf(this.state.search)!==-1
          }
      )
         let list_user='';

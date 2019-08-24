@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles/index';
 import List from '@material-ui/core/List/index';
 import ListItem from '@material-ui/core/ListItem/index';
-import ListItemIcon from '@material-ui/core/ListItemIcon/index';
 import ListItemText from '@material-ui/core/ListItemText/index';
 import '../styles/skillListStyle.css';
 import {getsubCategories} from "../firebase/fireManager";
@@ -25,8 +24,8 @@ export default function CheckboxList(props) {
     const {catId}= props;
     const[subData,setSubData] = useState([]);
     const[loading,setLoading]= useState(false);
-    const [checked, setChecked] = React.useState([]);
-    const [inp, setInp] = React.useState();
+    //const [checked, setChecked] = React.useState([]);
+  //  const [inp, setInp] = React.useState();
     const [edit, editCategory] = React.useState();
     const [obj,setObj1]= useState({});
     const [name,setName]= useState();
@@ -163,7 +162,7 @@ export default function CheckboxList(props) {
                              title="EditSubCategory"
                              onClick={edtCat}
                         />
-                        </>:edit==itemId ? <>
+                        </>:edit===itemId ? <>
 
                         <input className="chackInp1"
                                value = {name}

@@ -27,6 +27,7 @@ import Logout from './components/logout';
 import {Link} from "react-router-dom";
 
 
+
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
@@ -100,7 +101,6 @@ function ResponsiveDrawer(props) {
 
       fire.auth().onAuthStateChanged((user) => {
           if (user) {
-
           }
           else
           {
@@ -166,7 +166,7 @@ function ResponsiveDrawer(props) {
               edge="start"
               onClick={handleDrawerToggle}
               className={classes.menuButton}
-          ><MenuIcon /> </IconButton>
+          ><MenuIcon  /> </IconButton>
           <Typography variant="h6" noWrap>
             Admin
           </Typography>
@@ -204,7 +204,6 @@ function ResponsiveDrawer(props) {
         </Hidden>
       </nav>
         <main className={classes.content}>
-
         </main>
     </div>
   );
