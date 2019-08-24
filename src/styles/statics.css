@@ -20,7 +20,7 @@ h2{
     text-align: left;
     top: 80px;
     /* position: absolute;    */
-    font-size: 70px;
+    font-size: 70px!important;
     
   }
 
