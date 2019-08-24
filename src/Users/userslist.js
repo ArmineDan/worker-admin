@@ -10,8 +10,6 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 
 
-
-
 class Users extends React.Component{
     constructor(){
         super();
@@ -70,7 +68,8 @@ this.setState({search: ''})
 
 
         return(
-            <div> <h1 className="title">Users</h1>
+            <div>
+                <h1 className="title">Users</h1>
                 <input id='in'
                     type='text'
                     value={this.state.search}
