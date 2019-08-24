@@ -31,6 +31,7 @@ import {fire} from './firebase/firebase';
 import Logout from './components/logout'
 
 
+
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
@@ -112,7 +113,6 @@ const openCurrent =(e)=>{
 
       fire.auth().onAuthStateChanged((user) => {
           if (user) {
-//console.log(user,'user')
           }
           else
           {
@@ -131,12 +131,12 @@ const openCurrent =(e)=>{
         <List>
             {["Users","Archived Users"].map((text, index) => (
                 <ListItem button key={text}>
-                    <ListItemIcon  >{index % 2 === 0 ?  <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faUserTimes} style={{color: 'orange'}}/>}</ListItemIcon>
-                    <ListItemText primary={text} onClick={()=>{openCurrent(text)}}/>
+                    <ListItemIcon >{index % 2 === 0 ?  <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faUserTimes} style={{color: 'orange'}}/>}</ListItemIcon>
+                    <ListItemText  primary={text} onClick={()=>{openCurrent(text)}}/>
                 </ListItem>
             ))}
            {["Categories",'Statistics'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem  button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faListUl} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faChartBar} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
@@ -148,7 +148,7 @@ const openCurrent =(e)=>{
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
                 </ListItem>
             ))}
-            {["Subscribetions"].map((text, index) => (
+            {["Subscripetions"].map((text, index) => (
                 <ListItem button key={text}>
                     <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faBell} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
                     <ListItemText primary={text}  onClick={()=>{openCurrent(text)}} />
@@ -170,7 +170,7 @@ const openCurrent =(e)=>{
               edge="start"
               onClick={handleDrawerToggle}
               className={classes.menuButton}
-          ><MenuIcon /> </IconButton>
+          ><MenuIcon  /> </IconButton>
           <Typography variant="h6" noWrap>
             Admin
           </Typography>
@@ -209,9 +209,9 @@ const openCurrent =(e)=>{
       </nav>
         <main className={classes.content}>
             {show_current==='Users'?
-                <Users/>:
+            <Users/> :
                 show_current==='Archived Users'?
-                    <UsersArchive />:
+                <UsersArchive/> :
                     show_current==='Categories'?
                         <SkillList/>:
                     show_current==='Statistics'?
