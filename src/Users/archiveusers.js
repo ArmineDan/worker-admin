@@ -61,6 +61,7 @@ class UsersArchive extends React.Component{
                         <td> First Name : {item.firstName}</td>
                         <td> Last Name : {item.lastName}</td>
                         <td> Email: {item.email}</td>
+                        <td>Mobile: {item.mobile}</td>
                         <td><img src={active} id={item.id} alt="active" className="active" title="ActivityUser"  onClick={this.goactive_user}/></td>
                     </tr>
 
@@ -88,7 +89,8 @@ class UsersArchive extends React.Component{
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th className="preStyle">Permission</th>
+                        <th>Mobile</th>
+                        <th className="preStyle">Enable</th>
                     </tr>
                     
                     {list_user}
