@@ -35,6 +35,7 @@ function SkillList() {
     const [newIcon_class,addIconName]= useState();
     const [newStatus_new,addStatus]= useState();
     const [name,setName]= useState([]);
+    const [icon_class,setIcon]= useState([]);
     const [status,setStatus]= useState();
     const [obj,setObj1]= useState({});
 
@@ -44,10 +45,19 @@ function SkillList() {
         editCategorie(catId, obj)
         console.log(obj)    ;
         setName('');
+        setIcon('');
         setStatus('');
 
     }
 
+    const getNewIconName  = (e)=>{
+        setIcon(e.target.value)
+        setObj1({
+            ...obj,
+            icon_class: e.target.value
+        })
+
+    }
     const getNewCtgName=(e)=>{
         setName(e.target.value)
         setObj1({
@@ -56,14 +66,17 @@ function SkillList() {
         })
             };
 
-    const getNewCtgStatus=(e)=>{
-        setStatus(e.target.value)
+
+    const  check = (e) => {
+        setStatus(e.target.checked)
         setObj1({
-            ...obj,
-            status: e.target.value ==='true'?true:e.target.value ==='false'?false:false
+            ...addObj,
+            status: e.target.checked
             ,
         })
+
     };
+
 
 
 
@@ -84,10 +97,10 @@ function SkillList() {
         })};
 
     const getNewStatus = (event) => {
-        addStatus(event.target.value)
+        addStatus(event.target.checked)
         addObj2({
             ...addObj,
-            status: Boolean([event.target.value]),
+            status: event.target.checked,
         })};
     const handleSubmit = (e)=>{
         if(e.keyCode === 13) {
@@ -106,9 +119,7 @@ function SkillList() {
 
 
     const addToDB = ()=> {
-        console.log(addObj)
         db.collection('Categories').add(addObj).then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id)
             addIconName('');
             addStatus('');
             addSubCategory('');
@@ -126,9 +137,7 @@ function SkillList() {
 
 
 
-
     const handleClick = catId =>()=> {
-      console.log(catId);
 
 
 
@@ -151,7 +160,7 @@ function SkillList() {
             }
         );
 
-    }, [name,status,obj]);
+    }, [name,status,icon_class,obj]);
 
     return (<>
     <h1 className="title">Categories</h1>
@@ -179,14 +188,28 @@ function SkillList() {
                                 <form>
                                     <input className='ctgchangeInput1'
                                            value = {value.name? name: ''}
-                                           placeholder="Type changed Category's name.."
+                                           placeholder=" Changed Name.."
                                            onChange={getNewCtgName}
                                     />
-                                    <input className='ctgchangeInput2'
-                                           value = {String(value.status)?status: '' }
-                                           placeholder="Type changed Status.."
-                                           onChange={getNewCtgStatus}
+                                    <input className='ctgchangeInput3'
+                                           value = {value.icon_class?icon_class:''}
+                                           placeholder=" IconName.."
+                                           onChange={getNewIconName}
                                     />
+
+                                    <input
+                                        defaultChecked={value.status}
+                                        type = 'checkbox'
+                                        className="ctgchangeInput2"
+
+                                        value = {String(value.status)?status: ''}
+                                         onChange={check}
+                                    />
+                                    <font size="2"  className="ctgchangeinput2"> Show</font>
+
+
+
+
                                     <img src={changeIcon}
                                          alt="changeIcon"
                                          className="changeIcon"
@@ -208,19 +231,25 @@ function SkillList() {
 
                         <input className='ctgInp1'
                                value = {newName?newName:''}
-                               placeholder="Type new Category.."
+                               placeholder="new Category.."
                                onChange={getSubCategory}
                         />
                         <input className='ctgInp2'
                                value = {newIcon_class?newIcon_class:''}
-                               placeholder="Type category IconName.."
+                               placeholder="IconName.."
                                onChange={getIconName}
                         />
-                        <input className='ctgInp3'
-                               value = {newStatus_new ? newStatus_new :''}
-                               placeholder="Type category Status.."
-                               onChange={getNewStatus}
+
+                        <input
+                            defaultChecked={newStatus_new}
+                            type = 'checkbox'
+                            className="ctgInp3"
+
+                            value = {newStatus_new ? newStatus_new :''}
+                            onClick={getNewStatus}
                         />
+                        <font size="2"  className="ctginp3"> Show</font>
+
 
                         <img src={add}
                              alt="add"

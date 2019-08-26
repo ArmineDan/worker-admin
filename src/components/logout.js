@@ -1,5 +1,6 @@
-import React, {useEffect} from 'react';
-//import AccountCircle from '@material-ui/icons/AccountCircle';
+
+import React, {useState,useEffect} from 'react';
+
 import {fire} from '../firebase/firebase';
 import SignInImage from "../images/SignInImage.png"
 import {Link} from "react-router-dom";

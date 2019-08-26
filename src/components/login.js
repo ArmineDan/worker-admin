@@ -52,8 +52,7 @@ class Login extends React.Component{
     componentDidMount(){
         fire.auth().onAuthStateChanged((user) => {
             if (user) {
-                console.log(user,'user')
-               this.props.history.push('/dashboard')
+                this.props.history.push('/dashboard')
             }
 
 
