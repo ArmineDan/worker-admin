@@ -24,7 +24,6 @@ import{faBell} from '@fortawesome/free-solid-svg-icons';
 import './styles/skillListStyle.css';
 import IconButton from '@material-ui/core/IconButton';
 import { faChartBar} from '@fortawesome/free-solid-svg-icons';
-
 import MenuIcon from '@material-ui/icons/Menu';
 import {fire} from './firebase/firebase';
 import Logout from './components/logout';
@@ -124,7 +123,7 @@ function ResponsiveDrawer(props) {
         <List>
             {["Users","Archived Users"].map((text, index) => (
                 <Link to ={ `/${text==='Users'?'users':'archives'}`}>
-                <ListItem button key={text}>
+                <ListItem button key={text} >
                     <ListItemIcon  >{index % 2 === 0 ?  <FontAwesomeIcon icon={faUsers} style={{color: 'orange'}}  /> : <FontAwesomeIcon icon={faUserTimes} style={{color: 'orange'}}/>}</ListItemIcon>
                     <ListItemText style={{color: 'white'}}  primary={text} />
                 </ListItem>
@@ -154,6 +153,7 @@ function ResponsiveDrawer(props) {
                     <ListItemText style={{color: 'white'}}  primary={text}/>
                 </ListItem>
                 </Link>
+
             ))}
 
         </List>

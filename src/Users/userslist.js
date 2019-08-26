@@ -17,9 +17,7 @@ class Users extends React.Component{
             list: [],
             search: ''
             }
-
-
-    };
+        };
 
     componentDidMount(){
 
@@ -58,6 +56,7 @@ this.setState({search: ''})
                         <td> First Name : {item.firstName}</td>
                         <td> Last Name : {item.lastName}</td>
                         <td> Email: {item.email}</td>
+                        <td>Mobile: {item.mobile}</td>
                         <td ><img src={archive} id={item.id} alt="archive" className="archive" title="ArchiveUser"  onClick={this.archive_user}/></td>
                     </tr>
 
@@ -83,7 +82,8 @@ this.setState({search: ''})
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th className='preStyle'>Permission</th>
+                        <th>Mobile</th>
+                        <th className='preStyle'>Disable</th>
                         
                     </tr>
                    

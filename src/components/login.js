@@ -52,7 +52,11 @@ class Login extends React.Component{
     componentDidMount(){
         fire.auth().onAuthStateChanged((user) => {
             if (user) {
-                this.props.history.push('/dashboard')
+
+                console.log(user,'user')
+               this.props.history.push('/users')
+
+
             }
 
 
@@ -62,7 +66,7 @@ class Login extends React.Component{
         if(e.keyCode === 13) {
             fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
                 .then(() => {
-                    this.props.history.push('/dashboard')
+                    this.props.history.push('/users')
                 }).catch(function (error) {
                 var errorMessage = error.message;
                 alert(errorMessage);
@@ -77,7 +81,7 @@ class Login extends React.Component{
     loginBtnClick =(e)=>{
 
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then(() =>{this.props.history.push('/dashboard')}).catch(function(error) {
+            .then(() =>{this.props.history.push('/users')}).catch(function(error) {
             var errorMessage = error.message;
             alert(errorMessage);
         // ...
