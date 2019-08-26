@@ -326,7 +326,6 @@
 
  }
 
-
 .logOutIcon{
     position: absolute;
     top: 20px;
@@ -334,16 +333,18 @@
     height: 20px;
     width: 20px;
     cursor: pointer;
-}
-.logOutIcon:hover {
+ }
+ .logOutIcon:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
     background-color: #ff8a3d;
+
 }
 .logOutIcon:active {
     top: 21px;
     right:20px;
     position:absolute;
 }
+
 .ctgchangeInput1{
     width: 100%;
     max-width: 375px;

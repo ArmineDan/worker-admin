@@ -10,8 +10,6 @@ import { faTimes} from '@fortawesome/free-solid-svg-icons';
 
 
 
-
-
 class Users extends React.Component{
     constructor(){
         super();
@@ -47,7 +45,7 @@ this.setState({search: ''})
     render(){
      let filteredName=this.state.list.filter(
          (item)=>{
-             return item.firstName.indexOf(this.state.search)!==-1
+             return item.firstName.indexOf(this.state.search)!==-1 || item.lastName.indexOf(this.state.search)!==-1 || item.email.indexOf(this.state.search)!==-1
          }
      )
         let list_user='';
@@ -70,7 +68,8 @@ this.setState({search: ''})
 
 
         return(
-            <div> <h1 className="title">Users</h1>
+            <div>
+                <h1 className="title">Users</h1>
                 <input id='in'
                     type='text'
                     value={this.state.search}

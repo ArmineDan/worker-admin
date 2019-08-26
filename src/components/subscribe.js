@@ -1,6 +1,6 @@
 import React from 'react'
 import {getSubscribedUsers} from '../firebase/fireManager'
-import {db} from "../firebase/firebase";
+//import {db} from "../firebase/firebase";
 import "../styles/App.css";
 import list from '../images/list.png';
 import sendIcon from '../images/sendIcon.svg';
@@ -77,7 +77,7 @@ class Subscribe extends React.Component {
 
         return (
             <div className="dv">
-                <h1 className='t'>Subscribtions</h1>
+                <h1 className='t'>Subscriptions</h1>
                 <div className="listDiv">
 
 
