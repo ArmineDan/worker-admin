@@ -5,6 +5,9 @@ import "../styles/App.css";
 import list from '../images/list.png';
 import sendIcon from '../images/sendIcon.svg';
 import '../styles/iconsTitl.css'
+import './icons/New folder/css/bootstrap.css';
+import './icons/New folder/css/construction-icons.css';
+import './icons/New folder/css/font-icons.css';
 
 
 class Subscribe extends React.Component {
