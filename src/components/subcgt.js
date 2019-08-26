@@ -11,7 +11,7 @@ import addIcon from '../images/addIcon.png';
 import editIcon from '../images/editIcon.png';
 import {editSubCategorie}from '../firebase/fireManager'
 import {db} from "../firebase/firebase";
-
+import Icons from './icons list'
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
@@ -54,10 +54,10 @@ export default function CheckboxList(props) {
     };
 
     const getNewStatus = (event) => {
-        addStatus(event.target.value)
+        addStatus(event.target.checked)
         addObj2({
             ...addObj,
-            status: Boolean([event.target.value]),
+            status: event.target.checked,
         })};
 
 
@@ -98,11 +98,13 @@ export default function CheckboxList(props) {
             icon_class: e.target.value
         })};
         const getStatus=(e)=>{
-            setStatus(e.target.value)
+            setStatus(e.target.checked)
             setObj1({
                 ...obj,
-                status: e.target.value
-            })};
+                status: e.target.checked
+            })
+
+        };
 
 
     const edtCat = (e)=>{
@@ -153,7 +155,7 @@ export default function CheckboxList(props) {
                         { edit !== itemId ? <>
                             <ListItemText id={itemId} primary={item}/>
                         <div className="IconsStyle"><ListItemText id={itemId} primary={icons}/></div>
-                        <div className="StatusStyle"> < ListItemText  id = {itemId} primary={String(status)} /> </div>
+                        <div className="StatusStyle"> < ListItemText  id = {itemId} primary={String(status)==='true'? 'Show': 'Hidden'} /> </div>
 
                         <img src={editIcon}
                              id={itemId}
@@ -169,16 +171,21 @@ export default function CheckboxList(props) {
                                value = {name}
                                onChange={getName}
                         />
-                        <input
-                            className="chackInp3"
+                   <input
+                           className="chackInp3"
                             value = {icon_class}
                             onChange={getIcon}
                         />
-                        <input
-                            className="chackInp2"
+
+                <input
+                            defaultChecked={status_new}
+                            type = 'checkbox'
+                            className="chackinp2"
+
                             value = {status_new}
-                            onChange={getStatus}
+                            onClick={getStatus}
                         />
+                        <font size="2"  className="chackInp2"> Show</font>
                         <img src={acceptIcon}
                              id={itemId}
                              alt="editIcon"
@@ -202,19 +209,24 @@ export default function CheckboxList(props) {
 
                            <input className='subInp1'
                                   value = {newName?newName:''}
-                                  placeholder="Type new SubCategory.."
+                                  placeholder=" new SubCategory.."
                                   onChange={getSubCategory}
                     />
                     <input className='subInp2'
                                   value = {newIcon_class?newIcon_class:''}
-                                  placeholder="Type SubCategory IconName.."
+                                  placeholder="  IconName.."
                                   onChange={getIconName}
                     />
-                    <input className='subInp3'
-                                  value = {newStatus_new?newStatus_new:''}
-                                  placeholder="Type SubCategory Status.."
-                                  onChange={getNewStatus}
+
+                    <input
+                        defaultChecked={status_new}
+                        type = 'checkbox'
+                        className="subinp3"
+
+                        value = {newStatus_new?newStatus_new:''}
+                        onClick={getNewStatus}
                     />
+                    <font size="2"  className="subInp3"> Show</font>
                     <img src={addIcon}
                          id={props.catId}
                          alt="addIcon"
