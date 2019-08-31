@@ -12,7 +12,7 @@ import addIcon from '../images/addIcon.png';
 import editIcon from '../images/editIcon.png';
 import {editSubCategorie}from '../firebase/fireManager'
 import {db} from "../firebase/firebase";
-import Icons from './icons list';
+import Icons from './icons_list';
 import clouseIcon from '../images/clouseIcon.png';
 const useStyles = makeStyles(theme => ({
     root: {
@@ -127,8 +127,9 @@ export default function CheckboxList(props) {
     }
 
     const Show = () => {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
+        props.show_i(true)
+        // var popup = document.getElementById("myPopup");
+        // popup.classList.toggle("show");
     }
 
 
@@ -187,17 +188,6 @@ export default function CheckboxList(props) {
                         <button className="iconslistIcon"
                                 title="showIcons"
                                 onClick={Show} > Icons </button>
-
-
-
-                            <div className="popuptext" id="myPopup">
-                                <img src={clouseIcon}
-                                     alt="clouseIcon"
-                                     className="clouseIcon"
-                                     title="close"
-                                     onClick={Show}
-                                />
-                                <Icons/> </div>
                         </div>
 
                 <input
@@ -264,5 +254,6 @@ export default function CheckboxList(props) {
                 </div>
 
         </List>
+
     );
 }

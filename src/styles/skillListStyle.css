@@ -430,18 +430,13 @@
 }
 
 /* The actual popup (appears on top) */
-.popup .popuptext {
-    visibility: hidden;
-    width: 800px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
+.popuptext {
+
     position: absolute;
-    z-index: 1;
-    left: 50%;
-    margin-left: -800px;
+    top: 20%;
+    left: 259px;
+    background-color: #3a3c3c;
+    color: white;
 }
 
 /* Popup arrow */

@@ -8,7 +8,7 @@ import '../styles/iconsTitl.css'
 class Icons extends React.Component {
     render(){
         return(
-            
+
             <section id="content">
                 <h1 className='t'>Icons Callection</h1>
                 <div className="content-wrap">
