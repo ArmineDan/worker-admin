@@ -4,13 +4,16 @@ import List from '@material-ui/core/List/index';
 import ListItem from '@material-ui/core/ListItem/index';
 import ListItemText from '@material-ui/core/ListItemText/index';
 import '../styles/skillListStyle.css';
+import Popup from "reactjs-popup";
+import iconslistIcon from '../images/iconslistIcon.png';
 import {getsubCategories} from "../firebase/fireManager";
 import acceptIcon from '../images/acceptIcon.png'
 import addIcon from '../images/addIcon.png';
 import editIcon from '../images/editIcon.png';
 import {editSubCategorie}from '../firebase/fireManager'
 import {db} from "../firebase/firebase";
-import Icons from './icons list'
+import Icons from './icons list';
+import clouseIcon from '../images/clouseIcon.png';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
@@ -123,6 +126,10 @@ export default function CheckboxList(props) {
         editCategory(!e.target.id)
     }
 
+    const Show = () => {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
 
 
 
@@ -175,6 +182,23 @@ export default function CheckboxList(props) {
                             value = {icon_class}
                             onChange={getIcon}
                         />
+                        <div className="popup" >
+
+                        <button className="iconslistIcon"
+                                title="showIcons"
+                                onClick={Show} > Icons </button>
+
+
+
+                            <div className="popuptext" id="myPopup">
+                                <img src={clouseIcon}
+                                     alt="clouseIcon"
+                                     className="clouseIcon"
+                                     title="close"
+                                     onClick={Show}
+                                />
+                                <Icons/> </div>
+                        </div>
 
                 <input
                             defaultChecked={status_new}
@@ -184,6 +208,9 @@ export default function CheckboxList(props) {
                             value = {status_new}
                             onClick={getStatus}
                         />
+
+
+
                         <font size="2"  className="chackInp2"> Show</font>
                         <img src={acceptIcon}
                              id={itemId}
