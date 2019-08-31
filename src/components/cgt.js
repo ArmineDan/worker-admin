@@ -10,6 +10,7 @@ import '../styles/skillListStyle.css';
 import changeIcon from '../images/changeIcon.png';
 import CheckboxList from './subcgt';
 import {useState, useEffect} from 'react';
+import Popup from "reactjs-popup";
 import {getActiveCategories} from '../firebase/fireManager';
 import {editCategorie}  from '../firebase/fireManager';
 import add from '../images/add.png';
