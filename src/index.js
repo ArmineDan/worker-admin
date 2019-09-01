@@ -31,7 +31,6 @@ const route=(
             <Route exact path="/categories" component ={ShowCategories}/>
             <Route exact path="/statistics" component ={ShowStatistics}/>
             <Route exact path="/subscriptions" component ={ShowSubscriptions}/>
-            <Route exact path="/icons" component ={ShowIcons}/>
              <Route exact path="/dashboard" component={ResponsiveDrawer} />
              
 

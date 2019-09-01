@@ -138,14 +138,7 @@ function ResponsiveDrawer(props) {
                </Link>
             ))}
 
-            {["Icons Collection"].map((text, index) => (
-                <Link to = '/icons'>
-                <ListItem button key={text}>
-                    <ListItemIcon>{index % 2 === 0 ?  <FontAwesomeIcon icon={faBoxes} style={{color: 'orange'}} />:<FontAwesomeIcon icon={faListUl} style={{color: 'orange'}}  />}</ListItemIcon>
-                    <ListItemText style={{color: 'white'}}  primary={text} />
-                </ListItem>
-                </Link>
-            ))}
+
             {["Subscriptions"].map((text, index) => (
                 <Link to = '/subscriptions'>
                 <ListItem button key={text}>

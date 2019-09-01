@@ -126,11 +126,7 @@ export default function CheckboxList(props) {
         editCategory(!e.target.id)
     }
 
-    const Show = () => {
-        props.show_i(true)
-        // var popup = document.getElementById("myPopup");
-        // popup.classList.toggle("show");
-    }
+
 
 
 
@@ -185,9 +181,7 @@ export default function CheckboxList(props) {
                         />
                         <div className="popup" >
 
-                        <button className="iconslistIcon"
-                                title="showIcons"
-                                onClick={Show} > Icons </button>
+
                         </div>
 
                 <input
