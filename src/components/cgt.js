@@ -10,7 +10,6 @@ import '../styles/skillListStyle.css';
 import changeIcon from '../images/changeIcon.png';
 import CheckboxList from './subcgt';
 import {useState, useEffect} from 'react';
-import Popup from "reactjs-popup";
 import {getActiveCategories} from '../firebase/fireManager';
 import {editCategorie}  from '../firebase/fireManager';
 import add from '../images/add.png';
@@ -43,7 +42,14 @@ function SkillList() {
     const [status,setStatus]= useState();
     const [obj,setObj1]= useState({});
 
-
+    const Show = () => {
+       show_i(true)
+        // var popup = document.getElementById("myPopup");
+        // popup.classList.toggle("show");
+    }
+    const Hidden = () => {
+        hidden_i(false)
+    }
     const categoryChange = catId => (e) =>{
         console.log(catId)
         editCategorie(catId, obj)
@@ -55,6 +61,9 @@ function SkillList() {
     }
 
     const show_i =(e)=>{
+        setShow_icons(e)
+    }
+    const hidden_i =(e)=>{
         setShow_icons(e)
     }
     const getNewIconName  = (e)=>{
@@ -265,16 +274,20 @@ function SkillList() {
                              onClick={addToDB}
                         />
                     </div>
-                            </form>
+
+                            </form><button className="iconslistIcon"
+                                           title="showIcons"
+                                           onClick={Show}
+    > Icons collection </button>
 
 {
-    show_icons?
+    show_icons === true?
         <div className="popuptext" id="myPopup">
             <img src={clouseIcon}
                  alt="clouseIcon"
                  className="clouseIcon"
                  title="close"
-                 onClick={()=>show_i(false)}
+                 onClick={Hidden}
             />
             <Icons/> </div>:null
 }

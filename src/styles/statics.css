@@ -1,6 +1,7 @@
 
 @media only screen and (max-width: 999999999px) {
-#d1{  
+#d1{  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
    color: white;
 left: 20%;
 display: block;
@@ -16,7 +17,8 @@ padding:20px;
 
 }
 
-h2{
+h2{-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
     text-align: left;
     top: 80px;
     /* position: absolute;    */
@@ -24,11 +26,13 @@ h2{
     
   }
 
-  h1.title{
+  h1.title{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-top:40px
   }
 
-  #d2{  
+  #d2{  -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     color: white;
     left: 45%;
     display: block;
@@ -45,7 +49,8 @@ h2{
   }
 
   #d3{
-   
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     color: white;
     left: 70%;
     display: block;

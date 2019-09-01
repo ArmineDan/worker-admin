@@ -1,4 +1,5 @@
-#in{
+#in{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     right: 60px;
     top: 80px;
     max-width: 450px;
@@ -22,7 +23,8 @@
  
 
  #bu{
-
+     -webkit-animation: fadeIn 1s;
+     animation: fadeIn 1s;
     border-color: #fd7e14;
     text-align: center;
     position: absolute;
@@ -34,7 +36,8 @@
     cursor: pointer;
 
 }
-#bu:hover {
+#bu:hover {-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
     background-color: #c1cbbe;
 }
