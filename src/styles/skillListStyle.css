@@ -113,7 +113,7 @@
 }
 .subInp1{
     width: 100%;
-    max-width: 375px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
@@ -133,7 +133,7 @@
 .subInp2{
 
     width: 100%;
-    max-width: 375px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
@@ -155,12 +155,12 @@
     font-family:"Segoe UI";
     font-size:13px;
     text-align: left;
-    margin-left: 5px;
+    margin-left: 7px;
     margin-top: 7px;
 
 
 }.subinp3{
-     margin-left: 13px;
+     margin-left: 15px;
     margin-top: 10px;
      color: #343434;
      font-family:"Segoe UI";
@@ -208,7 +208,7 @@
 }
 .chackInp1{
     width: 100%;
-    max-width: 373.5px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
@@ -230,10 +230,10 @@
     font-family:"Segoe UI";
     font-size:13px;
     text-align: left;
-    margin-left: 5px;
+    margin-left: 10px;
 
 }.chackinp2{
-     margin-left: 14px;
+     margin-left: 15px;
 
      color: #343434;
     font-family:"Segoe UI";
@@ -244,7 +244,7 @@
 }
 .chackInp3{
     width: 100%;
-    max-width: 373.5px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
@@ -268,7 +268,7 @@
 
 .ctgInp1{
     width: 100%;
-    max-width: 375px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
@@ -287,7 +287,7 @@
 .ctgInp2{
 
     width: 100%;
-    max-width: 375px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
@@ -347,7 +347,7 @@
 
 .ctgchangeInput1{
     width: 100%;
-    max-width: 375px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
@@ -366,7 +366,7 @@
 }
 .ctgchangeInput3{
     width: 100%;
-    max-width: 375px;
+    max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
     -webkit-box-shadow: 0px 0px 33px -15px #acb3aa;
     box-shadow: 0px 0px 33px -15px #747a72;
