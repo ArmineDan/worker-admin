@@ -9,7 +9,8 @@
 }
 
 
-#customers td, #customers th {
+#customers td, #customers th {-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -20,21 +21,25 @@ h1.title{
 
 #customers tr:hover {background-color: #ddd;}
 
-#customers th {
+#customers th {-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-color: orange;
   color: black;
 }
- #i{
+ #i{-webkit-animation: fadeIn 1s;
+   animation: fadeIn 1s;
   margin-left: 72%;
    color: crimson
  }
- #b{
+ #b{-webkit-animation: fadeIn 1s;
+   animation: fadeIn 1s;
    color: crimson
  }
-  .archive {
+  .archive {-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-left: 20px;
     height: 30px;
     width: 30px;
@@ -50,20 +55,24 @@ h1.title{
   position:relative;
   top:1px;
 }
-.preStyle{
+.preStyle{-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   width: 30px;
 }
-.preStyle1{
+.preStyle1{-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   width: 110px;
 }
-.list{
+.list{-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   margin-top: 5px;
 
   height: 20px;
   width: 20px;
 }
 
-.active {
+.active {-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   margin-left: 20px;
   height: 30px;
   width: 30px;
@@ -80,7 +89,8 @@ h1.title{
   top:1px;
 }
 
-.listDiv{
+.listDiv{-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   width: 100%;
   max-width: 400px;
 min-height: 300px;
@@ -99,7 +109,8 @@ min-height: 300px;
 }
 
 
-.inputDiv{
+.inputDiv{-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   margin-left:500px ;
   margin-top: -205px;
    display: flex;
@@ -110,7 +121,8 @@ min-height: 300px;
 /*.dv{*/
   /*display: flex;*/
 /*}*/
-.sendInp{
+.sendInp{-webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
   margin-top: -30px;
   max-width: 550px;
   min-width: 100px;

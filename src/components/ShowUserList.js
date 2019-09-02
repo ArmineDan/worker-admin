@@ -6,7 +6,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import SkillList from './cgt';
 import Statics from '../statics';
 import Subscribe from './subscribe';
-import Icons from './icons list';
+import Icons from './icons_list';
 
 
 

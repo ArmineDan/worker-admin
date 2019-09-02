@@ -14,6 +14,8 @@ import {getActiveCategories} from '../firebase/fireManager';
 import {editCategorie}  from '../firebase/fireManager';
 import add from '../images/add.png';
 import {db} from '../firebase/firebase';
+import clouseIcon from "../images/clouseIcon.png";
+import Icons from "./icons_list";
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
@@ -30,6 +32,7 @@ function SkillList() {
     const[loading,setLoading]= useState(false);
     const classes = useStyles();
     const [openIds, setOpen] = useState([]);
+    const [show_icons, setShow_icons] = useState(false);
     const [addObj,addObj2]= useState({});
     const [newName,addSubCategory]= useState();
     const [newIcon_class,addIconName]= useState();
@@ -39,7 +42,14 @@ function SkillList() {
     const [status,setStatus]= useState();
     const [obj,setObj1]= useState({});
 
-
+    const Show = () => {
+       show_i(true)
+        // var popup = document.getElementById("myPopup");
+        // popup.classList.toggle("show");
+    }
+    const Hidden = () => {
+        hidden_i(false)
+    }
     const categoryChange = catId => (e) =>{
         console.log(catId)
         editCategorie(catId, obj)
@@ -50,6 +60,12 @@ function SkillList() {
 
     }
 
+    const show_i =(e)=>{
+        setShow_icons(e)
+    }
+    const hidden_i =(e)=>{
+        setShow_icons(e)
+    }
     const getNewIconName  = (e)=>{
         setIcon(e.target.value)
         setObj1({
@@ -160,7 +176,7 @@ function SkillList() {
             }
         );
 
-    }, [name,status,icon_class,obj]);
+    }, [name,status,icon_class,obj,show_icons]);
 
     return (<>
     <h1 className="title">Categories</h1>
@@ -183,7 +199,7 @@ function SkillList() {
                             <Collapse in={openIds.indexOf(value.id) !== -1} timeout="auto" unmountOnExit>
 
                                 <List component="div" disablePadding>
-                                    <CheckboxList catId={value.id} />
+                                    <CheckboxList catId={value.id} show_i={show_i} />
                                 </List>
                                 <form>
                                     <input className='ctgchangeInput1'
@@ -258,7 +274,24 @@ function SkillList() {
                              onClick={addToDB}
                         />
                     </div>
-                            </form>
+
+                            </form><button className="iconslistIcon"
+                                           title="showIcons"
+                                           onClick={Show}
+    > Icons collection </button>
+
+{
+    show_icons === true?
+        <div className="popuptext" id="myPopup">
+            <img src={clouseIcon}
+                 alt="clouseIcon"
+                 className="clouseIcon"
+                 title="close"
+                 onClick={Hidden}
+            />
+            <Icons/> </div>:null
+}
+
     </div>
 
         </>

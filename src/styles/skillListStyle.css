@@ -1,4 +1,5 @@
-.skillDiv{
+.skillDiv{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     height: fit-content;
     display: flex;
     background-color: orange;
@@ -22,7 +23,8 @@
     padding-right: 16px;
 }
 
-.MuiListItem-root {
+.MuiListItem-root {-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 100%;
     background-color: white;
     display: flex;
@@ -35,7 +37,8 @@
     justify-content: flex-start;
     text-decoration: none;
 }
-.addIcon{
+.addIcon{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-top: 3px;
     border-width: 2px;
     border-radius: 100%;
@@ -54,7 +57,8 @@
     top:1px;
 }
 .deleteIcon{
-
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     height: 20px;
     width: 20px;
     position: relative;
@@ -68,18 +72,21 @@
     position:relative;
     top:1px;
 }
-.div1{
+.div1{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-top: 5px;
     display: flex;
 
 }
-.div2{
+.div2{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-left: 30px;
     margin-top: 5px;
     display: flex;
 
 }
-.ctgInp{
+.ctgInp{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 1500px;
     margin-left: 5px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
@@ -98,7 +105,8 @@
     margin-left: 35px;
 
 }
-.add{
+.add{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-top: 3px;
     border-width: 2px;
     height: 25px;
@@ -111,7 +119,8 @@
     position:relative;
     top:1px;
 }
-.subInp1{
+.subInp1{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 100%;
     max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
@@ -130,7 +139,8 @@
     margin-left: 30px;
 
 }
-.subInp2{
+.subInp2{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
 
     width: 100%;
     max-width: 492px;
@@ -150,18 +160,18 @@
     margin-left: 30px;
 
 }
-.subInp3{
+.subInp3{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     color: #343434;
     font-family:"Segoe UI";
     font-size:13px;
     text-align: left;
     margin-left: 7px;
     margin-top: 7px;
-
-
-}.subinp3{
-     margin-left: 15px;
-    margin-top: 10px;
+}.subinp3{-webkit-animation: fadeIn 1s;
+     animation: fadeIn 1s;
+     margin-left: 13px;
+     margin-top: 10px;
      color: #343434;
      font-family:"Segoe UI";
      font-size:13px;
@@ -170,7 +180,8 @@
 
  }
 
-.editIcon{
+.editIcon{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-right: 7.5px;
     margin-top: 3px;
     border-width: 2px;
@@ -189,7 +200,8 @@
     position:relative;
     top:1px;
 }
-.acceptIcon{
+.acceptIcon{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-top: 3px;
     border-width: 2px;
     border-radius: 100%;
@@ -206,7 +218,8 @@
     position:relative;
     top:1px;
 }
-.chackInp1{
+.chackInp1{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 100%;
     max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
@@ -225,16 +238,16 @@
     margin-left: 14px;
 
 }
-.chackInp2{
+.chackInp2{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     color: #343434;
     font-family:"Segoe UI";
     font-size:13px;
     text-align: left;
     margin-left: 10px;
-
-}.chackinp2{
-     margin-left: 15px;
-
+}.chackinp2{-webkit-animation: fadeIn 1s;
+     animation: fadeIn 1s;
+     margin-left: 14px;
      color: #343434;
     font-family:"Segoe UI";
     font-size:13px;
@@ -242,7 +255,8 @@
 
 
 }
-.chackInp3{
+.chackInp3{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 100%;
     max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
@@ -266,7 +280,8 @@
     margin-right: 250px;
 }
 
-.ctgInp1{
+.ctgInp1{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 100%;
     max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
@@ -284,7 +299,8 @@
     text-align: left;
 
 }
-.ctgInp2{
+.ctgInp2{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
 
     width: 100%;
     max-width: 492px;
@@ -305,7 +321,8 @@
 
 }
 
-.ctgInp3{
+.ctgInp3{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     margin-top: 8.5px;
 
     color: #343434;
@@ -314,7 +331,8 @@
     text-align: left;
     margin-left: 12px;
 
-}.ctginp3{
+}.ctginp3{-webkit-animation: fadeIn 1s;
+     animation: fadeIn 1s;
     margin-top: 5px;
      margin-left: 5px;
      margin-right: 15px;
@@ -326,7 +344,8 @@
 
  }
 
-.logOutIcon{
+.logOutIcon{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     position: absolute;
     top: 20px;
     right:20px;
@@ -345,7 +364,8 @@
     position:absolute;
 }
 
-.ctgchangeInput1{
+.ctgchangeInput1{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 100%;
     max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
@@ -364,7 +384,8 @@
     margin-left: 5px;
     margin-bottom: 8px;
 }
-.ctgchangeInput3{
+.ctgchangeInput3{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     width: 100%;
     max-width: 492px;
     -moz-box-shadow: 0px 0px 33px -15px #747a72;
@@ -385,14 +406,16 @@
     margin-left: 30px;
 }
 
-.ctgchangeInput2{
+.ctgchangeInput2{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     color: #343434;
     font-family:"Segoe UI";
     font-size:13px;
     text-align: left;
     margin-left: 12px;
 
-}.ctgchangeinput2{
+}.ctgchangeinput2{-webkit-animation: fadeIn 1s;
+     animation: fadeIn 1s;
      margin-left: 2px;
     margin-right: 15px;
      color: #343434;
@@ -404,7 +427,8 @@
  }
 
 
-.changeIcon{
+.changeIcon{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
     border-radius: 25%;
     margin-top: 3px;
     height: 25px;
@@ -417,6 +441,128 @@
     background-color: #c1cbbe;
 }
 .changeIcon:active {
+    position:relative;
+    top:1px;
+}
+
+.popup {-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    margin-top: -3px;
+    margin-left: 5px;
+    position: inherit;
+    display: inline-block;
+    cursor: auto;
+}
+
+/* The actual popup (appears on top) */
+.popuptext {
+    border-color: #ffa859;
+    border-style: solid;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    overflow-y: scroll;
+    height: 550px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius:1%;
+    position: fixed;
+    top: 15%;
+    left: 315px;
+    background-color: #3a3c3c;
+    color: white;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.61);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(128, 128, 128);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff7e37;
+}
+
+
+/* Popup arrow */
+.popup .popuptext::after {-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
+.clouseIcon{-webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    right: 70px;
+    z-index: 2;
+    border-radius: 25%;
+    margin-top: 10px;
+    height: 25px;
+    width: 25px;
+    position: fixed;
+    cursor: pointer;
+}
+.clouseIcon:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+}
+.clouseIcon:active {
+    position:fixed;
+}
+.iconslistIcon{
+    background-color: rgba(255, 185, 96, 0.44);
+    font-family:"Segoe UI";
+    margin-top: 10px;
+    height: 35px;
+    width: 100%;
+    max-width: 930px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+.iconslistIcon:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.07);
+    background-color: rgba(142, 142, 142, 0.44);
+}
+.iconslistIcon:active {
     position:relative;
     top:1px;
 }
