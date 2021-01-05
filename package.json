@@ -10,7 +10,7 @@
     "@material-ui/icons": "^4.2.1",
     "@momentum-ui/icons": "^6.21.0",
     "@version/react-router-v3": "^1.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
     "firebase": "^6.3.3",
